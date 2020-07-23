@@ -10,7 +10,7 @@ EditorBuildSettings:
     guid: 655efcd1f35d84a17811e309dc5ffc43
   - enabled: 1
     path: Assets/0_MyAssets/Scenes/001.unity
-    guid: e7a2eec27eece476797e19ca085f2133
+    guid: 9ba2a6359569f45c0ba6dbfa4f6db7ed
   - enabled: 1
     path: Assets/0_MyAssets/Scenes/002.unity
     guid: f6121f1e5bec644f18f640ba10ce023a
@@ -32,4 +32,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/0_MyAssets/Scenes/008.unity
     guid: 6c86d898bbb864337ab97e592d5daaed
+  - enabled: 1
+    path: Assets/0_MyAssets/Scenes/009.unity
+    guid: 003d33c2f2a774097aae015db0c54163
+  - enabled: 1
+    path: Assets/0_MyAssets/Scenes/010.unity
+    guid: 9b730f670f79c44c7844690bc191ba90
   m_configObjects: {}
