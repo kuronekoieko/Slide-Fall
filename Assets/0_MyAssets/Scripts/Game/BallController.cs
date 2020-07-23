@@ -22,5 +22,6 @@ public class BallController : MonoBehaviour
         if (Variables.screenState != ScreenState.Game) return;
         Variables.screenState = ScreenState.Clear;
         Debug.Log(Variables.screenState);
+        CameraController.i.PlayConfetti();
     }
 }

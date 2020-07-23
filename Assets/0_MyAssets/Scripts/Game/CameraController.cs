@@ -9,14 +9,19 @@ using DG.Tweening;
 /// </summary>
 public class CameraController : MonoBehaviour
 {
+    [SerializeField] ParticleSystem confettiL;
+    [SerializeField] ParticleSystem confettiR;
     public static CameraController i;
     void Start()
     {
         if (i == null) i = this;
     }
 
-    void Update()
-    {
 
+    public void PlayConfetti()
+    {
+        confettiL.Play();
+        confettiR.Play();
+        SoundManager.i?.PlayOneShot(1);
     }
 }
