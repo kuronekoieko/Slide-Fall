@@ -1,10 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class StartController : MonoBehaviour
 {
+    [SerializeField] Transform cubesTfm;
+    [SerializeField] Transform movePosTfm;
     Collider col;
+
     void Awake()
     {
         col = GetComponent<Collider>();
@@ -18,13 +22,13 @@ public class StartController : MonoBehaviour
 
     void Update()
     {
-
+        if (Variables.gameState != GameState.FloorMove) return;
         if (Input.GetMouseButtonDown(0))
         {
             if (IsTap(out Vector3 tapPos))
             {
-                gameObject.SetActive(false);
                 Variables.gameState = GameState.BallFall;
+                cubesTfm.DOMove(movePosTfm.position, 0.5f);
             }
         }
     }
