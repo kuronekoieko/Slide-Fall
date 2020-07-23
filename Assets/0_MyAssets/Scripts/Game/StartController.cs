@@ -25,8 +25,10 @@ public class StartController : MonoBehaviour
         if (Variables.gameState != GameState.FloorMove) return;
         if (Input.GetMouseButtonDown(0))
         {
+
             if (IsTap(out Vector3 tapPos))
             {
+
                 Variables.gameState = GameState.BallFall;
                 cubesTfm.DOMove(movePosTfm.position, 0.5f);
             }

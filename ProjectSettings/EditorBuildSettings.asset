@@ -9,6 +9,18 @@ EditorBuildSettings:
     path: Assets/0_MyAssets/Scenes/UIScene.unity
     guid: 655efcd1f35d84a17811e309dc5ffc43
   - enabled: 1
-    path: Assets/0_MyAssets/Scenes/SampleScene.unity
-    guid: d1c3109bdb54ad54c8a2b2838528e640
+    path: Assets/0_MyAssets/Scenes/001.unity
+    guid: e7a2eec27eece476797e19ca085f2133
+  - enabled: 1
+    path: Assets/0_MyAssets/Scenes/002.unity
+    guid: f6121f1e5bec644f18f640ba10ce023a
+  - enabled: 1
+    path: Assets/0_MyAssets/Scenes/003.unity
+    guid: 99240649e1492495ea8bcd1567fb6b55
+  - enabled: 1
+    path: Assets/0_MyAssets/Scenes/004.unity
+    guid: 14e8c2c68421040c894dce6ab9d92ae3
+  - enabled: 1
+    path: Assets/0_MyAssets/Scenes/006.unity
+    guid: 4b569a8dafd0d4511bd8cc5eedbb8417
   m_configObjects: {}

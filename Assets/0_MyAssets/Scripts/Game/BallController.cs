@@ -4,7 +4,12 @@ using UnityEngine;
 
 public class BallController : MonoBehaviour
 {
-    [SerializeField] Transform deadLine;
+    Transform deadLine;
+
+    void Start()
+    {
+        deadLine = GameObject.FindGameObjectWithTag("DeadLine").transform;
+    }
 
     void Update()
     {
