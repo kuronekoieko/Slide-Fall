@@ -7,9 +7,10 @@ public class FloorController : MonoBehaviour
     [SerializeField] Collider col;
     Vector3 preTapPos;
     bool isDragging;
+    Vector3 railVectorUp;
     void Start()
     {
-
+        railVectorUp = GetRailTf(transform.position).up;
     }
 
 
@@ -28,10 +29,18 @@ public class FloorController : MonoBehaviour
         {
             if (!isDragging) return;
             Vector3 tapPos = WorldPosOnTap();
-            Vector3 dir = tapPos - preTapPos;
-            dir.x = 0;
-            dir.z = 0;
-            transform.Translate(dir);
+            Vector3 dragDiff = tapPos - preTapPos;
+            dragDiff.z = 0;
+
+            var moveDiff = Vector3.Project(dragDiff, railVectorUp);
+
+            Transform railTfm = GetRailTf(transform.position + dragDiff);
+            if (railTfm == null)
+            {
+                preTapPos = tapPos;
+                return;
+            }
+            transform.Translate(moveDiff);
             preTapPos = tapPos;
         }
 
@@ -52,11 +61,19 @@ public class FloorController : MonoBehaviour
         return true;
     }
 
-
     Vector3 WorldPosOnTap()
     {
         var mousePosition = Input.mousePosition;
         mousePosition.z = -Camera.main.transform.position.z;
         return Camera.main.ScreenToWorldPoint(mousePosition);
+    }
+
+    Transform GetRailTf(Vector3 rayOrigin)
+    {
+        Ray ray = new Ray(rayOrigin, Vector3.forward);
+        bool isHit = Physics.Raycast(ray.origin, ray.direction, out RaycastHit hit, Mathf.Infinity);
+        if (!isHit) return null;
+        if (!hit.collider.CompareTag("Rail")) return null;
+        return hit.collider.transform;
     }
 }
