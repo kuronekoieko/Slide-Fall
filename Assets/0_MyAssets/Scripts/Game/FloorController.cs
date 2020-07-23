@@ -16,6 +16,7 @@ public class FloorController : MonoBehaviour
 
     void Update()
     {
+        if (Variables.gameState != GameState.FloorMove) return;
         if (Input.GetMouseButtonDown(0))
         {
             if (IsTap(out Vector3 tapPos))

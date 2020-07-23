@@ -18,4 +18,11 @@ public class Variables : MonoBehaviour
     }
     private static int _currentstageIndex;
     public static int lastStageIndex;
+    public static GameState gameState;
+}
+
+public enum GameState
+{
+    FloorMove,
+    BallFall
 }
