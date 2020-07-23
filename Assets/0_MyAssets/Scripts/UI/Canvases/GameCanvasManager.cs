@@ -12,16 +12,17 @@ using UniRx;
 /// </summary>
 public class GameCanvasManager : BaseCanvasManager
 {
+    [SerializeField] Button retryButton;
     [SerializeField] Text stageNumText;
 
     public override void OnStart()
     {
-
+        retryButton.onClick.AddListener(OnClickRetryButtton);
 
         base.SetScreenAction(thisScreen: ScreenState.Game);
 
-        this.ObserveEveryValueChanged(currentStageIndex => Variables.currentStageIndex)
-            .Subscribe(currentStageIndex => { ShowStageNumText(); })
+        this.ObserveEveryValueChanged(currentSceneBuildIndex => Variables.currentSceneBuildIndex)
+            .Subscribe(currentSceneBuildIndex => { ShowStageNumText(); })
             .AddTo(this.gameObject);
 
         gameObject.SetActive(true);
@@ -46,6 +47,13 @@ public class GameCanvasManager : BaseCanvasManager
 
     void ShowStageNumText()
     {
-        stageNumText.text = "Stage " + (Variables.currentStageIndex + 1).ToString("000");
+        stageNumText.text = "LEVEL " + Variables.currentSceneBuildIndex;
+    }
+
+    void OnClickRetryButtton()
+    {
+        bool canClick = Variables.screenState == ScreenState.Game;
+        if (!canClick) { return; }
+        base.ReLoadScene();
     }
 }

@@ -44,7 +44,8 @@ public class UIManager : MonoBehaviour
         }
 
         SceneManager.sceneLoaded += SceneLoaded;
-        SceneManager.LoadScene("GameScene");
+        Variables.currentSceneBuildIndex = 1;
+        SceneManager.LoadScene(Variables.currentSceneBuildIndex);
     }
 
     void Update()
