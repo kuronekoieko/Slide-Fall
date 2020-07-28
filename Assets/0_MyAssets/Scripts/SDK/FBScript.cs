@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-// Include Facebook namespace
+/*// Include Facebook namespace
 using Facebook.Unity;
+
 public class FBScript : MonoBehaviour
 {
     // Awake function from Unity's MonoBehavior
@@ -49,3 +50,4 @@ public class FBScript : MonoBehaviour
         }
     }
 }
+*/
