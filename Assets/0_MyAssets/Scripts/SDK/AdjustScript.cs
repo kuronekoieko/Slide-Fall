@@ -14,7 +14,7 @@ public class AdjustScript : MonoBehaviour
 
 #if UNITY_IOS
         /* Mandatory - set your iOS app token here */
-        InitAdjust("YOUR_IOS_APP_TOKEN_HERE");
+        InitAdjust("wq9o7zndyrcw");
 #elif UNITY_ANDROID
         /* Mandatory - set your Android app token here */
         InitAdjust("YOUR_ANDROID_APP_TOKEN_HERE");
