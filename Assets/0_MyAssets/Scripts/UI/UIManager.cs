@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using GameAnalyticsSDK;
 
 /// <summary>
 /// 画面UIの一括管理
@@ -47,7 +46,6 @@ public class UIManager : MonoBehaviour
         SceneManager.sceneLoaded += SceneLoaded;
         Variables.currentSceneBuildIndex = 1;
         SceneManager.LoadScene(Variables.currentSceneBuildIndex);
-        GameAnalytics.Initialize();
     }
 
     void Update()
