@@ -31,8 +31,8 @@ public class AdjustScript : MonoBehaviour
         );
         adjustConfig.setLogLevel(AdjustLogLevel.Info); // AdjustLogLevel.Suppress to disable logs
         adjustConfig.setSendInBackground(true);
-        new GameObject("Adjust").AddComponent<Adjust>(); // do not remove or rename
-
+        var adjust = new GameObject("Adjust").AddComponent<Adjust>(); // do not remove or rename
+        DontDestroyOnLoad(adjust.gameObject);
         // Adjust.addSessionCallbackParameter("foo", "bar"); // if requested to set session-level parameters
 
         //adjustConfig.setAttributionChangedDelegate((adjustAttribution) => {
