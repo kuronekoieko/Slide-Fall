@@ -6,9 +6,11 @@ using Facebook.Unity;
 
 public class FBScript : MonoBehaviour
 {
+    public static FBScript i;
     // Awake function from Unity's MonoBehavior
     void Awake()
     {
+        i = this;
         if (!FB.IsInitialized)
         {
             // Initialize the Facebook SDK
@@ -48,5 +50,11 @@ public class FBScript : MonoBehaviour
             // Resume the game - we're getting focus again
             Time.timeScale = 1;
         }
+    }
+
+
+    public void AchievedLevel(int achievedLevel)
+    {
+        FB.LogAppEvent(AppEventName.AchievedLevel, (float)achievedLevel);
     }
 }

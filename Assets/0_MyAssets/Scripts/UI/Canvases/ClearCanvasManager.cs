@@ -25,6 +25,7 @@ public class ClearCanvasManager : BaseCanvasManager
 
     protected override void OnOpen()
     {
+        FBScript.i.AchievedLevel(achievedLevel: Variables.currentSceneBuildIndex);
         // UICameraController.i.PlayConfetti();
         DOVirtual.DelayedCall(1.2f, () =>
         {
